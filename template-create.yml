@@ -39,8 +39,7 @@
       template_disk_interface: virtio_scsi
       template_disk_format: raw
       template_type: server
-    collections:
-      - ovirt.ovirt
+      
     roles:
       - image-template
     
