@@ -90,8 +90,8 @@
       ovirt_disk:
         auth: "{{ ovirt_auth }}"
         name: "{{ template_disk_name | default(template_name) }}"
-        # size: "{{ qcow2_size }}"
-        size: 50GiB
+        size: "{{ qcow2_size }}"
+        # size: 50GiB
         format: "{{ template_disk_format | default(omit) }}"
         image_path: "{{ downloaded_file.dest }}"
         storage_domain: "{{ template_disk_storage | default(disk_storage_domain.name) }}"
