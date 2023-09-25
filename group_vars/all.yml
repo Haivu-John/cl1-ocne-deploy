@@ -18,7 +18,7 @@
 # OLVM and common VM details !!!Required!!!
 #
 olvm_cluster: Default
-olvm_template: 
+olvm_template: ol8-template
 storage_domain: NFS-Domain
 
 ## Specify the logical network !!!Required!!!
