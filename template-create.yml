@@ -37,6 +37,7 @@
       template_disk_storage: "{{ storage_domain }}"
       template_seal: true
       template_disk_interface: virtio_scsi
+      template_disk_format: qcow2
       template_type: server
 
     roles:
