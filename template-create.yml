@@ -41,4 +41,6 @@
       template_type: server
 
     roles:
-      - ovirt.image-template
+      - image-template
+    collections:
+      - ovirt.ovirt
