@@ -96,6 +96,7 @@
         image_path: "{{ downloaded_file.dest }}"
         storage_domain: "{{ template_disk_storage | default(disk_storage_domain.name) }}"
         force: "{{ template_info.ovirt_templates | length == 0 }}"
+        timeout: 1200
       register: ovirt_disk
       when: template_info.ovirt_templates | length == 0
       tags:
@@ -169,14 +170,14 @@
           set_fact:
             vm_ip: "{{ vm_info.ovirt_vms | ovirtvmipv4 }}"
 
-        # - name: Include prerequisites tasks for VM
-        #   import_tasks: "{{ template_prerequisites_tasks if template_prerequisites_tasks is defined else 'empty.yml' }}"
-        #   static: no
-        #   delegate_to: "{{ vm_ip }}"
-        #   vars:
-        #     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
-        #     ansible_user: root
-        #     ansible_ssh_private_key_file: "{{ tmp_private_key_file | default(omit) }}"
+        - name: Include prerequisites tasks for VM
+          import_tasks: "{{ template_prerequisites_tasks if template_prerequisites_tasks is defined else 'empty.yml' }}"
+          static: no
+          delegate_to: "{{ vm_ip }}"
+          vars:
+            ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+            ansible_user: root
+            ansible_ssh_private_key_file: "{{ tmp_private_key_file | default(omit) }}"
 
         - name: Remove SSH keys
           file:
