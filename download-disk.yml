@@ -17,9 +17,9 @@
 - hosts: olvm
   become: yes
   gather_facts: false
-  vars:
-    proxy_env:
-      https_proxy: "{{ my_https_proxy }}"
+  # vars:
+  #   proxy_env:
+  #     https_proxy: "{{ my_https_proxy }}"
 
   tasks:
   - name: Verify wget availability
@@ -27,15 +27,15 @@
       name: wget
       state: latest
 
-  - name: Download Template Disk (With proxy)
-    shell: |
-           wget -O "{{ disk_location }}" "{{ disk_download_url }}"
-    environment: "{{ proxy_env }}"
-    when:
-    - use_proxy == true
+  # - name: Download Template Disk (With proxy)
+  #   shell: |
+  #          wget -O "{{ disk_location }}" "{{ disk_download_url }}"
+  #   environment: "{{ proxy_env }}"
+  #   when:
+  #   - use_proxy == true
 
   - name: Download Template Disk (Without proxy)
     shell: |
            wget -O "{{ disk_location }}" "{{ disk_download_url }}"
-    when:
-    - use_proxy == false
+    # when:
+    # - use_proxy == false
