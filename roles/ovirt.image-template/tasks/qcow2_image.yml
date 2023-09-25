@@ -95,7 +95,7 @@
         format: "{{ template_disk_format | default(omit) }}"
         image_path: "{{ downloaded_file.dest }}"
         storage_domain: "{{ template_disk_storage | default(disk_storage_domain.name) }}"
-        force: "{{ template_info.ovirt_templates | length == 0 }}"
+        # force: "{{ template_info.ovirt_templates | length == 0 }}"
         timeout: 1200
       register: ovirt_disk
       when: template_info.ovirt_templates | length == 0
