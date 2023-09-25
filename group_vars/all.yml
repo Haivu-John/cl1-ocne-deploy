@@ -123,10 +123,10 @@ ocne_repo: ol8_olcne13
 ## ocne_repo: ol7_olcne13
 
 # Set name for the OLCNE environment !!!Required!!!
-ocne_environment:
+ocne_environment: exam_environment
 
 # Set name of the OLCNE Kubernetes module !!!Required!!!
-ocne_k8s:
+ocne_k8s: OLCNE_Module
 
 # Options for Modules to Deploy
 deploy_istio: true
