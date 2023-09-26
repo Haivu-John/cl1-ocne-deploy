@@ -1,0 +1,38 @@
+---
+  - name: Install required packages
+    hosts: olam
+    become: yes
+    become_method: sudo
+    gather_facts: false
+    vars_files:
+    - password.yml
+    tasks:
+      - name: Check if id_rsa exists
+        stat:
+          path: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+        register: id_rsa_info
+      - name: Check if id_rsa.pub exists
+        stat:
+          path: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
+        register: id_rsa_pub_info
+      
+      - name: Display id_rsa existence status
+        debug:
+          msg: "The id_rsa exists"
+        when: id_rsa_info.stat.exists
+
+      - name: Display id_rsa_pub_info existence status
+        debug:
+          msg: "The id_rsa exists"
+        when: id_rsa_pub_info.stat.exists
+
+      - name: Copy id_rsa file
+        copy:
+          src: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+          dest: "files/"
+        when: id_rsa_info.stat.exists
+      - name: Copy id_rsa file
+        copy:
+          src: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
+          dest: "files/"
+        when: id_rsa_pub_info.stat.exists
