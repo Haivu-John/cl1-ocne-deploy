@@ -17,7 +17,7 @@
 ---
 
 - import_playbook: olvm-prepare.yml
-- import_playbook: olam-prepare.yml
+# - import_playbook: olam-prepare.yml
 - import_playbook: download-disk.yml
 - import_playbook: template-create.yml
 - import_playbook: create_vm.yml
