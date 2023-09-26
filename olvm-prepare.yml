@@ -1,0 +1,23 @@
+---
+  - name: Install required packages
+    hosts: olvm
+    become: yes
+    become_method: sudo
+    gather_facts: false
+    vars_files:
+    - password.yml
+    tasks:
+      - name: Check if ovirt-imageio-client package is installed
+        package_facts:
+          manager: auto
+        register: package_info
+
+      - name: Display package installation status
+        debug:
+          var: package_info.ansible_facts.packages['ovirt-imageio-client']
+
+      - name: Install ovirt-imageio-client package
+        package:
+          name: ovirt-imageio-client
+          state: present
+        when: "'ovirt-imageio-client.x86_64' not in package_info.ansible_facts.packages"

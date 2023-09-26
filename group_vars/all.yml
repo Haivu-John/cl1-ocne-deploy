@@ -132,23 +132,23 @@ ocne_k8s: OLCNE_Module
 deploy_istio: true
 
 # Set this to true only if OLCNE version is v1.3 or higher and you want to install the Operator Lifecycle Manager module.
-deploy_olm: false
+deploy_olm: true
 
 # Set name of the OLCNE Helm. Required is deploying Istio or OLM Modules. Leave empty if not creating either of them.
-ocne_helm:
+ocne_helm: olcne-helm
 
 # Set name of the OLCNE Istio module. Leave empty if not creating Istio module.
-ocne_istio:
+ocne_istio: olcne-istio
 
 # Set name of the OLCNE OLM module. Leave empty if not creating OLM module.
-ocne_olm:
+ocne_olm: olcne-olm
 
 #
 # Set the list of control plane and worker nodes
 #
-control_nodes: 10.193.1.100:8090
-worker_nodes: 10.193.1.101:8090,10.193.1.102:8090
-all_nodes: 10.193.1.100,10.193.1.101,10.193.1.102
+control_nodes: 10.193.1.100:8090,10.193.1.101:8090,10.193.1.102:8090
+worker_nodes: 10.193.1.103:8090,10.193.1.104:8090
+all_nodes: 10.193.1.100,10.193.1.101,10.193.1.102,10.193.1.103,10.193.1.104
 
 # Nodes to add into an existing cluster.
 # add_nodes lists the nodes for certificate generation

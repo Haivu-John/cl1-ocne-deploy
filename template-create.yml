@@ -37,9 +37,9 @@
       template_disk_storage: "{{ storage_domain }}"
       template_seal: true
       template_disk_interface: virtio_scsi
-      template_disk_format: raw
+      # template_disk_format: raw
       template_type: server
 
     roles:
-      - ovirt.image-template
+      - image_template
     

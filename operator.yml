@@ -47,7 +47,7 @@
 
   - name: Installing the olcne-api-server olcne-utils olcnectl packages
     shell: |
-           yum install -y olcne-api-server{{ ocne_version }} olcne-utils{{ ocne_version}} olcnectl{{ ocne_version }}
+           yum install -y olcne-api-server olcne-utils olcnectl
 
 
   - name: Enable olcne-api-server Service

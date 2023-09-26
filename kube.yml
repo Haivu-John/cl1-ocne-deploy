@@ -132,7 +132,7 @@
   - name: Install the olcne-agent olcne-utils packages
     become: yes
     shell: |
-           yum install -y olcne-agent{{ ocne_version }} olcne-utils{{ ocne_version}}
+           yum install -y olcne-agent olcne-utils
 
   - name: Enable olcne-agent Service
     service:

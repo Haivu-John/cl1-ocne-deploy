@@ -107,7 +107,7 @@
           root_password: "{{ vm_root_passwd }}"
           dns_servers: "{{ vm_dns }}"
           nic_name: "{{ vm_nicname | default('eth0') }}"
-          nic_on_boot: true
+          # nic_on_boot: true
           nic_boot_protocol: static
           nic_ip_address: "{{ hostvars[item]['ansible_ssh_host'] }}"
           nic_gateway: "{{ vm_gateway }}"
