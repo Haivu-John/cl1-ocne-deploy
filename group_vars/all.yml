@@ -129,20 +129,19 @@ ocne_environment: exam_environment
 ocne_k8s: OLCNE_Module
 
 # Options for Modules to Deploy
-deploy_istio: true
+deploy_istio: failse
 
 # Set this to true only if OLCNE version is v1.3 or higher and you want to install the Operator Lifecycle Manager module.
-deploy_olm: true
+deploy_olm: failse
 
 # Set name of the OLCNE Helm. Required is deploying Istio or OLM Modules. Leave empty if not creating either of them.
-ocne_helm: olcne-helm
+ocne_helm: 
 
 # Set name of the OLCNE Istio module. Leave empty if not creating Istio module.
-ocne_istio: olcne-istio
+ocne_istio: 
 
 # Set name of the OLCNE OLM module. Leave empty if not creating OLM module.
-ocne_olm: olcne-olm
-
+ocne_olm: 
 #
 # Set the list of control plane and worker nodes
 #
