@@ -21,6 +21,12 @@
   gather_facts: false
 
   tasks:
+  - name: Wait for host to be available
+    wait_for:
+      host: "{{ ansible_host }}"
+      port: 22
+      timeout: 600
+
   - name: Add proxy config to yum.conf
     lineinfile:
       path: /etc/yum.conf
