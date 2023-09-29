@@ -19,7 +19,7 @@
 #
 olvm_cluster: Default
 olvm_template: ol8-template
-storage_domain: NFS-Domain
+storage_domain: olvm-repo
 
 ## Specify the logical network !!!Required!!!
 vm_network: ovirtmgmt
