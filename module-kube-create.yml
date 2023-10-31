@@ -92,4 +92,4 @@
         --environment-name {{ ocne_environment }} --name {{ ocne_k8s }}
     register: deploy_kube
     until: deploy_kube is not failed
-    retries: 3
+    retries: 5
