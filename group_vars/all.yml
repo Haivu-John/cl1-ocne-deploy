@@ -22,12 +22,12 @@ olvm_template: ol8-template
 storage_domain: olvm-repo
 
 ## Specify the logical network !!!Required!!!
-vm_network: ovirtmgmt
+vm_network: VLAN194
 ## Example:
 # vm_network: ovirtmgmt
 
 ## Specify VNIC Profile of the logical network !!!Required!!!
-vm_network_profile: ovirtmgmt
+vm_network_profile: VLAN194
 ## Example:
 # vm_network_profile: ovirtmgmt
 
@@ -38,9 +38,9 @@ use_dhcp: false
 #
 # Cloud init variables  !!!Required!!!
 #
-vm_dns: 10.193.1.53
-vm_dns_domain: "search example.com"
-vm_gateway: 10.193.1.1                   # Leave empty if using DHCP
+vm_dns: 10.194.1.10
+vm_dns_domain: "search example.local"
+vm_gateway: 10.194.1.1                   # Leave empty if using DHCP
 vm_netmask: 255.255.255.0                      # Leave empty if using DHCP
 vm_timezone: Asia/Ho_Chi_Minh
 vm_chrony: "server 2.rhel.pool.ntp.org iburst"
@@ -104,7 +104,7 @@ ha: true
 #
 # The virtual IP for an olcne-nginx load balancer !!!Required!!!
 #
-virtual_ip: 10.193.1.105
+virtual_ip: 10.194.1.105
 
 #
 # OCNE version to deploy !!!Required!!!
@@ -123,7 +123,7 @@ ocne_repo: ol8_olcne13
 ## ocne_repo: ol7_olcne13
 
 # Set name for the OLCNE environment !!!Required!!!
-ocne_environment: exam_environment
+ocne_environment: exam_uat
 
 # Set name of the OLCNE Kubernetes module !!!Required!!!
 ocne_k8s: OLCNE_Module
@@ -145,9 +145,9 @@ ocne_olm:
 #
 # Set the list of control plane and worker nodes
 #
-control_nodes: 10.193.1.100:8090,10.193.1.101:8090,10.193.1.102:8090
-worker_nodes: 10.193.1.103:8090,10.193.1.104:8090
-all_nodes: 10.193.1.100,10.193.1.101,10.193.1.102,10.193.1.103,10.193.1.104
+control_nodes: 10.194.1.100:8090,10.194.1.101:8090,10.194.1.102:8090
+worker_nodes: 10.194.1.103:8090,10.194.1.104:8090
+all_nodes: 10.194.1.100,10.194.1.101,10.194.1.102,10.194.1.103,10.194.1.104
 
 # Nodes to add into an existing cluster.
 # add_nodes lists the nodes for certificate generation
