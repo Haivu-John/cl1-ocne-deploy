@@ -125,8 +125,8 @@ ocne_repo: ol8_olcne13
 # Set name for the OLCNE environment !!!Required!!!
 ocne_environment: exam_uat
 
-# Set name of the OLCNE Kubernetes module !!!Required!!!
-ocne_k8s: OLCNE_Module
+# Set name of the OLCNE Kubernetes module (Cluster Name) !!!Required!!!
+ocne_k8s: uat-cl
 
 # Options for Modules to Deploy
 deploy_istio: failse
