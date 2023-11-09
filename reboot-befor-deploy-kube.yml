@@ -8,11 +8,4 @@
 
   tasks:
   - name: Reboot all hosts
-    shell: |
-           sudo reboot 
-
-  - name: Wait for host to be available
-    wait_for:
-      host: "{{ ansible_host }}"
-      port: 22
-      timeout: 600
+    reboot:
