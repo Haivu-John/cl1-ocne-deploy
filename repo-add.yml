@@ -26,6 +26,17 @@
       host: "{{ ansible_host }}"
       port: 22
       timeout: 600
+  - name: Upgrade OS to Latest
+    shell: |
+           dnf update -y
+    when:
+      - ol_version == "ol8"
+
+  - name: Upgrade OS to Latest
+    shell: |
+           yum update -y
+    when:
+      - ol_version == "ol7"
 
   - name: Add proxy config to yum.conf
     lineinfile:
@@ -74,3 +85,13 @@
     when:
       - ol_version == "ol7"
     ignore_errors: yes
+    
+  - name: Reboot all hosts
+    shell: |
+           sodu reboot 
+
+  - name: Wait for host to be available
+    wait_for:
+      host: "{{ ansible_host }}"
+      port: 22
+      timeout: 600
