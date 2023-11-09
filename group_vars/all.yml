@@ -129,7 +129,7 @@ ocne_environment: exam_uat
 ocne_k8s: uat-cl
 
 # Options for Modules to Deploy
-deploy_istio: failse
+deploy_istio: true
 
 # Set this to true only if OLCNE version is v1.3 or higher and you want to install the Operator Lifecycle Manager module.
 deploy_olm: failse
@@ -138,7 +138,7 @@ deploy_olm: failse
 ocne_helm: 
 
 # Set name of the OLCNE Istio module. Leave empty if not creating Istio module.
-ocne_istio: 
+ocne_istio: Istio
 
 # Set name of the OLCNE OLM module. Leave empty if not creating OLM module.
 ocne_olm: 
