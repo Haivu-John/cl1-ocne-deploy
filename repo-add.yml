@@ -85,10 +85,10 @@
     when:
       - ol_version == "ol7"
     ignore_errors: yes
-    
+
   - name: Reboot all hosts
     shell: |
-           sodu reboot 
+           sudo reboot 
 
   - name: Wait for host to be available
     wait_for:
