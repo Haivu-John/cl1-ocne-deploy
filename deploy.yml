@@ -22,6 +22,7 @@
 - import_playbook: template-create.yml
 - import_playbook: create_vm.yml
 - import_playbook: repo-add.yml
+- import_playbook: reboot-befor-deploy-kube.yml
 - import_playbook: operator.yml
 - import_playbook: kube.yml
 - import_playbook: nginx.yml
